@@ -2,62 +2,56 @@
 # http://webapi.nhtsa.gov/Default.aspx?SafetyRatings/API/5
 
 module Nhtsa
-  class Years
+  module Ncap
 
-    def initialize(format = "json")
-      @format = format
+    class Years
+      def url
+        "http://webapi.nhtsa.gov/api/SafetyRatings?format=json"
+      end
     end
 
-    def year_url
-      "http://webapi.nhtsa.gov/api/SafetyRatings?format=#{@format}"
+    class Manufacturers
+      def initialize(year)
+        @year = year
+      end
+
+      def url
+        "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/#{@year}?format=json"
+      end
     end
+
+    class Models
+      def initialize(year, manufacturer)
+        @year = year
+        @manufacturer = manufacturer
+      end
+
+      def url
+        "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/#{@year}/make/#{@manufacturer}?format=json"
+      end
+    end
+
+    class Trims
+      def initialize(year, manufacturer, model)
+        @year = year
+        @manufacturer = manufacturer
+        @model = model
+      end
+
+      def url
+        "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/#{@year}/make/#{@manufacturer}/model/#{@model}?format=json"
+      end
+    end
+
+    class Ratings
+      def initialize(vehicle_id)
+        @vehicle_id = vehicle_id
+      end
+
+      def url
+        "http://webapi.nhtsa.gov/api/SafetyRatings/VehicleId/#{@vehicle_id}?format=json"
+      end
+    end
+
   end
-
-  class Manufacturers
-    def initialize(format = "json", year)
-      @format = format
-      @year = year
-    end
-
-    def manufacturers_url
-      "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/#{@year}?format=#{@format}"
-    end
-  end
-
-  class Models
-    def initialize(format = "json", year, manufacturer)
-      @format = format
-      @year = year
-      @manufacturer = manufacturer
-    end
-
-    def url
-      "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/#{@year}/make/#{@manufacturer}?format=#{@format}"
-    end
-  end
-
-  class Trims
-    def initialize(format = "json", year, manufacturer, model)
-      @format = format
-      @year = year
-      @manufacturer = manufacturer
-      @model = model
-    end
-
-    def url
-      "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/#{@year}/make/#{@manufacturer}/model/#{@model}?format=#{@model}"
-    end
-  end
-
-  class Ratings
-    def initialize(format = "json", vehicle_id)
-      @format = format
-      @vehicle_id = vehicle_id
-    end
-
-    def url
-      "http://webapi.nhtsa.gov/api/SafetyRatings/VehicleId/#{@vehicle_id}?format=#{@format}"
-    end
-  end
-
 end
