@@ -5,8 +5,15 @@ module Nhtsa
   module Ncap
 
     class Years
+      require 'json'
+      require 'open-uri'
+
       def url
         "http://webapi.nhtsa.gov/api/SafetyRatings?format=json"
+      end
+
+      def years
+        JSON.parse(open(url).read)["Results"].collect{|year| year["ModelYear"]}
       end
     end
 
