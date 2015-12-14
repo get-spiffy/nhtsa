@@ -22,4 +22,9 @@ class Minitest::Test
     :body => File.open(File.expand_path(".", "test/fixtures/ncap_models.json")).read
   )
 
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/1998/make/Mitsubishi/model/Galant?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/ncap_trims.json")).read
+  )
+
 end

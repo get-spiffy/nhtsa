@@ -1,0 +1,9 @@
+{
+  "Count":1,
+  "Message":"Results returned successfully",
+  "Results":[
+    {"VehicleDescription":"1998 Mitsubishi Galant 4-DR.","VehicleId":3832},
+    {"VehicleDescription":"1998 Mitsubishi Galant 4-DR. Station Wagon","VehicleId":3834},
+    {"VehicleDescription":"1998 Mitsubishi Galant 4-DR. VR-4","VehicleId":3881}
+  ]
+}
