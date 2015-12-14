@@ -3,11 +3,10 @@
 
 module Nhtsa
   module Ncap
+    require 'json'
+    require 'open-uri'
 
     class Years
-      require 'json'
-      require 'open-uri'
-
       def url
         "http://webapi.nhtsa.gov/api/SafetyRatings?format=json"
       end
@@ -82,6 +81,10 @@ module Nhtsa
 
       def url
         "http://webapi.nhtsa.gov/api/SafetyRatings/VehicleId/#{@vehicle_id}?format=json"
+      end
+
+      def ratings
+        JSON.parse(open(url).read)["Results"].first
       end
     end
 
