@@ -8,4 +8,10 @@ class ModelsTest < Minitest::Test
     assert_equal expected_url, Nhtsa::Ncap::Models.new(2015, "Mitsubishi").url
   end
 
+  def test_models_returns_an_array_of_models
+    model_names = ["ECLIPSE", "GALANT"]
+
+    assert_equal model_names, Nhtsa::Ncap::Models.new(1998, "Mitsubishi").models
+  end
+
 end

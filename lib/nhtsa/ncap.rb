@@ -40,6 +40,10 @@ module Nhtsa
       def url
         "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/#{@year}/make/#{@manufacturer}?format=json"
       end
+
+      def models
+        JSON.parse(open(url).read)["Results"].collect{|model| model["Model"]}
+      end
     end
 
     class Trims
