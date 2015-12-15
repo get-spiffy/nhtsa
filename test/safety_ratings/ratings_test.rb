@@ -5,7 +5,7 @@ class RatingsTest < Minitest::Test
   def test_it_builds_url_as_expected
     expected_url = "http://webapi.nhtsa.gov/api/SafetyRatings/VehicleId/420?format=json"
 
-    assert_equal expected_url, Nhtsa::Ncap::Ratings.new(420).url
+    assert_equal expected_url, Nhtsa::SafetyRatings::Ratings.new(420).url
   end
 
   def test_ratings_should_return_a_harsh_of_ratings
@@ -35,7 +35,7 @@ class RatingsTest < Minitest::Test
       "VehicleId"=>3832
     }
 
-    assert_equal ratings_hash, Nhtsa::Ncap::Ratings.new(3832).ratings
+    assert_equal ratings_hash, Nhtsa::SafetyRatings::Ratings.new(3832).ratings
   end
 
 end
