@@ -14,7 +14,7 @@ class ManufacturersTest < Minitest::Test
       "FORD", "GM", "GMC", "HONDA", "HYUNDAI", "INFINITI", "ISUZU", "JEEP", "LEXUS",
       "LINCOLN", "MAZDA", "MERCEDES-BENZ", "MERCURY", "MITSUBISHI", "NISSAN",
       "OLDSMOBILE", "PLYMOUTH", "PONTIAC", "SAAB", "SATURN", "SUBARU", "TOYOTA",
-      "VOLKSWAGEN", "VOLVO"
+      "VOLKSWAGEN", "VOLVO", "?"
     ]
 
     assert_equal manufacturer_names, Nhtsa::SafetyRatings::Manufacturers.new(1998).manufacturers
