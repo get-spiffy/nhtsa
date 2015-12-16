@@ -59,4 +59,31 @@ class Minitest::Test
     :body => File.open(File.expand_path(".", "test/fixtures/recalls/campaign_recalls.json")).read
   )
 
+  # Complaints
+  
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/complaints/years.json")).read
+  )
+
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle/modelyear/1998?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/complaints/manufacturers.json")).read
+  )
+
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle/modelyear/1998/make/Mitsubishi?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/complaints/models.json")).read
+  )
+
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle/modelyear/1998/make/BMW/model/318?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/complaints/complaints.json")).read
+  )
+
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle/odinumber/10457576?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/complaints/complaints_by_odi_number.json")).read
+  )
+
 end
