@@ -1,0 +1,26 @@
+{
+  "StartLatitude":37.7995,
+  "StartLongitude":-90.4373,
+  "Count":1,
+  "Message":"Results returned successfully",
+  "Results":[
+    {
+      "ContactFirstName":"TJ",
+      "ContactLastName":"Isgrig",
+      "Organization":"St. Francois County Ambulance District",
+      "AddressLine1":"820 Electric St",
+      "City":"Farmington",
+      "State":"MO",
+      "Zip":"63640",
+      "Email":"pounds@sfcad.org",
+      "Fax":"573-431-0714",
+      "Phone1":"573-431-0030",
+      "CPSWeekEventFlag":"No",
+      "LastUpdatedDate":"\/Date(1383163962000-0400)\/",
+      "MobileStationFlag":"No",
+      "CountiesServed":"St. Francois and surrounding area",
+      "LocationLatitude":37.7995,
+      "LocationLongitude":-90.4373
+    }
+  ]
+}
