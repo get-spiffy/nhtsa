@@ -98,6 +98,8 @@ class Minitest::Test
     :body => File.open(File.expand_path(".", "test/fixtures/civil_penalties/civil_penalty_by_year.json")).read
   )
 
+  # Child Safety Seat Inspection Station Locator
+
   FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/CSSIStation/zip/63640?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/child_safety_seat_inspection_station_loccator/get_by_zip_code.json")).read
