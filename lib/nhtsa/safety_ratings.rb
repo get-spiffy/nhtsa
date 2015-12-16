@@ -2,7 +2,7 @@
 # http://webapi.nhtsa.gov/Default.aspx?SafetyRatings/API/5
 
 module Nhtsa
-  module Ncap
+  module SafetyRatings
     require 'json'
     require 'open-uri'
 

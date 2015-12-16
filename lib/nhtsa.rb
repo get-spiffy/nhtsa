@@ -1,5 +1,5 @@
 require "nhtsa/version"
-require "nhtsa/ncap"
+require "nhtsa/safety_ratings"
 
 module Nhtsa
 end
