@@ -60,7 +60,7 @@ class Minitest::Test
   )
 
   # Complaints
-  
+
   FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/complaints/years.json")).read
@@ -84,6 +84,18 @@ class Minitest::Test
   FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle/odinumber/10457576?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/complaints/complaints_by_odi_number.json")).read
+  )
+
+  # Civil Penalties
+
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/CivilPenalties?format=json",
+   :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/civil_penalties/civil_penalties.json")).read
+  )
+
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/CivilPenalties/year/2012?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/civil_penalties/civil_penalty_by_year.json")).read
   )
 
 end
