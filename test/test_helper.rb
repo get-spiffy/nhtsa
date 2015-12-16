@@ -59,6 +59,8 @@ class Minitest::Test
     :body => File.open(File.expand_path(".", "test/fixtures/recalls/campaign_recalls.json")).read
   )
 
+  # Complaints
+  
   FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/complaints/years.json")).read
