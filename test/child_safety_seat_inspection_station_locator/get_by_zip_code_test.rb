@@ -9,6 +9,24 @@ module ChildSafetySeatInspectionStationLocator
       assert_equal expected_url, Nhtsa::ChildSafetySeatInspectionStationLocator::GetByZipCode.new(12345).url
     end
 
+    def test_it_adds_the_spanish_filter_to_url_when_specified
+      expected_url = "http://webapi.nhtsa.gov/api/CSSIStation/zip/12345/lang/spanish?format=json"
+
+      assert_equal expected_url, Nhtsa::ChildSafetySeatInspectionStationLocator::GetByZipCode.new(12345, {spanish: true}).url
+    end
+
+    def test_it_adds_the_cpsweek_filter_to_url_when_specified
+      expected_url = "http://webapi.nhtsa.gov/api/CSSIStation/zip/12345/cpsweek?format=json"
+
+      assert_equal expected_url, Nhtsa::ChildSafetySeatInspectionStationLocator::GetByZipCode.new(12345, {cpsweek: true}).url
+    end
+
+    def test_it_adds_the_spanish_and_cpsweek_filters_to_url_when_specified
+      expected_url = "http://webapi.nhtsa.gov/api/CSSIStation/zip/12345/lang/spanish/cpsweek?format=json"
+
+      assert_equal expected_url, Nhtsa::ChildSafetySeatInspectionStationLocator::GetByZipCode.new(12345, {spanish: true, cpsweek: true}).url
+    end
+
     def test_inspection_stations_returns_an_array_of_location_hashes
       expected_location_hashes = [
         {
