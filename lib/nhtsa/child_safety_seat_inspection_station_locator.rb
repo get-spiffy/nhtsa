@@ -36,7 +36,15 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/CSSIStation/state/#{@state_abbreviation}?format=json"
+        if @filters[:spanish] && @filters[:cpsweek]
+          "http://webapi.nhtsa.gov/api/CSSIStation/state/#{@state_abbreviation}/lang/spanish/cpsweek?format=json"
+        elsif @filters[:spanish]
+          "http://webapi.nhtsa.gov/api/CSSIStation/state/#{@state_abbreviation}/lang/spanish?format=json"
+        elsif @filters[:cpsweek]
+          "http://webapi.nhtsa.gov/api/CSSIStation/state/#{@state_abbreviation}/cpsweek?format=json"
+        else
+          "http://webapi.nhtsa.gov/api/CSSIStation/state/#{@state_abbreviation}?format=json"
+        end
       end
 
       def inspection_stations

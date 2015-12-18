@@ -8,6 +8,24 @@ module ChildSafetySeatInspectionStationLocator
       assert_equal expected_url, Nhtsa::ChildSafetySeatInspectionStationLocator::GetByState.new("MA").url
     end
 
+    def test_it_adds_the_spanish_filter_to_url_when_specified
+      expected_url = "http://webapi.nhtsa.gov/api/CSSIStation/state/MA/lang/spanish?format=json"
+
+      assert_equal expected_url, Nhtsa::ChildSafetySeatInspectionStationLocator::GetByState.new("MA", {:spanish => true}).url
+    end
+
+    def test_it_adds_the_cpsweek_filter_to_url_when_specified
+      expected_url = "http://webapi.nhtsa.gov/api/CSSIStation/state/MA/cpsweek?format=json"
+
+      assert_equal expected_url, Nhtsa::ChildSafetySeatInspectionStationLocator::GetByState.new("MA", {:cpsweek => true}).url
+    end
+
+    def test_it_adds_the_spanish_and_cpsweek_filters_to_url_when_specified
+      expected_url = "http://webapi.nhtsa.gov/api/CSSIStation/state/MA/lang/spanish/cpsweek?format=json"
+
+      assert_equal expected_url, Nhtsa::ChildSafetySeatInspectionStationLocator::GetByState.new("MA", {:spanish => true, :cpsweek => true}).url
+    end
+
     def test_inspection_stations_returns_an_array_of_location_hashes
       expected_location_hashes = [
         {
