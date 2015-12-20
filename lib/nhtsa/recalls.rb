@@ -30,7 +30,7 @@ module Nhtsa
     class Models
       def initialize(year, manufacturer)
         @year = year
-        @manufacturer = manufacturer
+        @manufacturer = URI::encode(manufacturer)
       end
 
       def url
@@ -45,8 +45,8 @@ module Nhtsa
     class Recalls
       def initialize(year, manufacturer, model)
         @year = year
-        @manufacturer = manufacturer
-        @model = model
+        @manufacturer = URI::encode(manufacturer)
+        @model = URI::encode(model)
       end
 
       def url
