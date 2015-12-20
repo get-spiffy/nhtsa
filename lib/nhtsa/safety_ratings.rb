@@ -3,8 +3,6 @@
 
 module Nhtsa
   module SafetyRatings
-    require 'json'
-    require 'open-uri'
 
     class Years
       def url

@@ -2,8 +2,6 @@
 
 module Nhtsa
   module Recalls
-    require 'json'
-    require 'open-uri'
 
     class Years
       def url

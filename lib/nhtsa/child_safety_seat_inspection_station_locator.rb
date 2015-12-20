@@ -3,8 +3,6 @@
 
 module Nhtsa
   module ChildSafetySeatInspectionStationLocator
-    require 'json'
-    require 'open-uri'
 
     class GetByZipCode
       def initialize(zip_code, filters = {:spanish => false, :cpsweek => false})

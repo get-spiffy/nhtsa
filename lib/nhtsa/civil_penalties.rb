@@ -3,8 +3,6 @@
 
 module Nhtsa
   module CivilPenalties
-    require 'json'
-    require 'open-uri'
 
     class CivilPenalties
       def url

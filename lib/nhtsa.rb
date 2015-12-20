@@ -6,4 +6,6 @@ require "nhtsa/civil_penalties"
 require "nhtsa/child_safety_seat_inspection_station_locator"
 
 module Nhtsa
+  require 'json'
+  require 'open-uri'
 end
