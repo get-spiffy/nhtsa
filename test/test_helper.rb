@@ -93,7 +93,7 @@ class Minitest::Test
     :body => File.open(File.expand_path(".", "test/fixtures/civil_penalties/civil_penalties.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/CivilPenalties/year/2012?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/CivilPenalties/2012?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/civil_penalties/civil_penalty_by_year.json")).read
   )

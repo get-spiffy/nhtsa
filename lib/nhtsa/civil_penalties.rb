@@ -4,9 +4,11 @@
 module Nhtsa
   module CivilPenalties
 
+    END_POINT = "/CivilPenalties"
+
     class CivilPenalties
       def url
-        "http://webapi.nhtsa.gov/api/CivilPenalties?format=json"
+        BASE_URI + END_POINT + DEFAULT_PARAMS
       end
 
       def civil_penalties
@@ -20,7 +22,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/CivilPenalties/year/#{@year}?format=json"
+        BASE_URI + END_POINT + "/#{@year}" + DEFAULT_PARAMS
       end
 
       def civil_penalties_by_year
