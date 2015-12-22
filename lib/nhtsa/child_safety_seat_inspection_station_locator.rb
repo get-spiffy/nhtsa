@@ -4,6 +4,10 @@
 module Nhtsa
   module ChildSafetySeatInspectionStationLocator
 
+    END_POINT = "/CSSIStation"
+    CPS_WEEK = "/cpsweek"
+    SPANISH = "/lang/spanish"
+
     class GetByZipCode
       def initialize(zip_code, filters = {:spanish => false, :cpsweek => false})
         @zip_code = zip_code
@@ -12,13 +16,13 @@ module Nhtsa
 
       def url
         if @filters[:spanish] && @filters[:cpsweek]
-          "http://webapi.nhtsa.gov/api/CSSIStation/zip/#{@zip_code}/lang/spanish/cpsweek?format=json"
+          BASE_URI + END_POINT + "/zip/#{@zip_code}" + CPS_WEEK + SPANISH + DEFAULT_PARAMS
         elsif @filters[:spanish]
-          "http://webapi.nhtsa.gov/api/CSSIStation/zip/#{@zip_code}/lang/spanish?format=json"
+          BASE_URI + END_POINT + "/zip/#{@zip_code}" + SPANISH + DEFAULT_PARAMS
         elsif @filters[:cpsweek]
-          "http://webapi.nhtsa.gov/api/CSSIStation/zip/#{@zip_code}/cpsweek?format=json"
+          BASE_URI + END_POINT + "/zip/#{@zip_code}" + CPS_WEEK + DEFAULT_PARAMS
         else
-          "http://webapi.nhtsa.gov/api/CSSIStation/zip/#{@zip_code}?format=json"
+          BASE_URI + END_POINT + "/zip/#{@zip_code}" + DEFAULT_PARAMS
         end
       end
 
@@ -35,13 +39,13 @@ module Nhtsa
 
       def url
         if @filters[:spanish] && @filters[:cpsweek]
-          "http://webapi.nhtsa.gov/api/CSSIStation/state/#{@state_abbreviation}/lang/spanish/cpsweek?format=json"
+          BASE_URI + END_POINT + "/state/#{@state_abbreviation}" + CPS_WEEK + SPANISH + DEFAULT_PARAMS
         elsif @filters[:spanish]
-          "http://webapi.nhtsa.gov/api/CSSIStation/state/#{@state_abbreviation}/lang/spanish?format=json"
+          BASE_URI + END_POINT + "/state/#{@state_abbreviation}" + SPANISH + DEFAULT_PARAMS
         elsif @filters[:cpsweek]
-          "http://webapi.nhtsa.gov/api/CSSIStation/state/#{@state_abbreviation}/cpsweek?format=json"
+          BASE_URI + END_POINT + "/state/#{@state_abbreviation}" + CPS_WEEK + DEFAULT_PARAMS
         else
-          "http://webapi.nhtsa.gov/api/CSSIStation/state/#{@state_abbreviation}?format=json"
+          BASE_URI + END_POINT + "/state/#{@state_abbreviation}" + DEFAULT_PARAMS
         end
       end
 
