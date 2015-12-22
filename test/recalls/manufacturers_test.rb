@@ -3,7 +3,7 @@ require 'test_helper'
 class ManufacturersTest < Minitest::Test
 
   def test_it_builds_url_as_expected
-    expected_url = "http://webapi.nhtsa.gov/api/Recalls/vehicle/modelyear/1993?format=json"
+    expected_url = "http://webapi.nhtsa.gov/api/Recalls/vehicle/1993?format=json"
 
     assert_equal expected_url, Nhtsa::Recalls::Manufacturers.new(1993).url
   end

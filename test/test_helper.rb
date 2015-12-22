@@ -39,17 +39,17 @@ class Minitest::Test
     :body => File.open(File.expand_path(".", "test/fixtures/recalls/years.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/modelyear/1998?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/1998?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/recalls/manufacturers.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/modelyear/1998/make/Mitsubishi?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/1998/Mitsubishi?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/recalls/models.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/modelyear/1998/make/Mitsubishi/model/Galant?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/1998/Mitsubishi/Galant?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/recalls/recalls.json")).read
   )
