@@ -4,9 +4,11 @@
 module Nhtsa
   module SafetyRatings
 
+    END_POINT = "/SafetyRatings"
+
     class Years
       def url
-        "http://webapi.nhtsa.gov/api/SafetyRatings?format=json"
+        BASE_URI + END_POINT + DEFAULT_PARAMS
       end
 
       def years
@@ -20,7 +22,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/#{@year}?format=json"
+        BASE_URI + END_POINT + "/#{@year}" + DEFAULT_PARAMS
       end
 
       def manufacturers
@@ -35,7 +37,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/#{@year}/make/#{@manufacturer}?format=json"
+        BASE_URI + END_POINT + "/#{@year}/#{@manufacturer}" + DEFAULT_PARAMS
       end
 
       def models
@@ -51,7 +53,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/#{@year}/make/#{@manufacturer}/model/#{@model}?format=json"
+        BASE_URI + END_POINT + "/#{@year}/#{@manufacturer}/#{@model}" + DEFAULT_PARAMS
       end
 
       def trims
@@ -78,7 +80,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/SafetyRatings/VehicleId/#{@vehicle_id}?format=json"
+        BASE_URI + END_POINT + "/VehicleId/#{@vehicle_id}" + DEFAULT_PARAMS
       end
 
       def ratings
