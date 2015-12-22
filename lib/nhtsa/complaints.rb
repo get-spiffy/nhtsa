@@ -4,9 +4,11 @@
 module Nhtsa
   module Complaints
 
+    END_POINT = "/Complaints/vehicle"
+
     class Years
       def url
-        "http://webapi.nhtsa.gov/api/Complaints/vehicle?format=json"
+        BASE_URI + END_POINT + DEFAULT_PARAMS
       end
 
       def years
@@ -20,7 +22,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/Complaints/vehicle/modelyear/#{@year}?format=json"
+        BASE_URI + END_POINT + "/#{@year}" + DEFAULT_PARAMS
       end
 
       def manufacturers
@@ -35,7 +37,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/Complaints/vehicle/modelyear/#{@year}/make/#{@manufacturer}?format=json"
+        BASE_URI + END_POINT + "/#{@year}/#{@manufacturer}" + DEFAULT_PARAMS
       end
 
       def models
@@ -51,7 +53,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/Complaints/vehicle/modelyear/#{@year}/make/#{@manufacturer}/model/#{@model}?format=json"
+        BASE_URI + END_POINT + "/#{@year}/#{@manufacturer}/#{@model}" + DEFAULT_PARAMS
       end
 
       def complaints
@@ -65,7 +67,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/Complaints/vehicle/odinumber/#{@odi_number}?format=json"
+        BASE_URI + END_POINT + "/odinumber/#{@odi_number}" + DEFAULT_PARAMS
       end
 
       def complaints_by_odi_number
