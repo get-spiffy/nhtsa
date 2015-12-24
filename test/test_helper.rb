@@ -12,17 +12,17 @@ class Minitest::Test
     :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/years.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/1998?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/1998?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/manufacturers.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/1998/make/Mitsubishi?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/1998/Mitsubishi?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/models.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/modelyear/1998/make/Mitsubishi/model/Galant?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/1998/Mitsubishi/Galant?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/trims.json")).read
   )
@@ -39,17 +39,17 @@ class Minitest::Test
     :body => File.open(File.expand_path(".", "test/fixtures/recalls/years.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/modelyear/1998?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/1998?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/recalls/manufacturers.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/modelyear/1998/make/Mitsubishi?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/1998/Mitsubishi?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/recalls/models.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/modelyear/1998/make/Mitsubishi/model/Galant?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Recalls/vehicle/1998/Mitsubishi/Galant?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/recalls/recalls.json")).read
   )
@@ -66,17 +66,17 @@ class Minitest::Test
     :body => File.open(File.expand_path(".", "test/fixtures/complaints/years.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle/modelyear/1998?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle/1998?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/complaints/manufacturers.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle/modelyear/1998/make/Mitsubishi?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle/1998/Mitsubishi?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/complaints/models.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle/modelyear/1998/make/BMW/model/318?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/Complaints/vehicle/1998/BMW/318?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/complaints/complaints.json")).read
   )
@@ -93,7 +93,7 @@ class Minitest::Test
     :body => File.open(File.expand_path(".", "test/fixtures/civil_penalties/civil_penalties.json")).read
   )
 
-  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/CivilPenalties/year/2012?format=json",
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/CivilPenalties/2012?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/civil_penalties/civil_penalty_by_year.json")).read
   )

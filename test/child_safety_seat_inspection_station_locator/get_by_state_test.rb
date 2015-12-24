@@ -21,7 +21,7 @@ module ChildSafetySeatInspectionStationLocator
     end
 
     def test_it_adds_the_spanish_and_cpsweek_filters_to_url_when_specified
-      expected_url = "http://webapi.nhtsa.gov/api/CSSIStation/state/MA/lang/spanish/cpsweek?format=json"
+      expected_url = "http://webapi.nhtsa.gov/api/CSSIStation/state/MA/cpsweek/lang/spanish?format=json"
 
       assert_equal expected_url, Nhtsa::ChildSafetySeatInspectionStationLocator::GetByState.new("MA", {:spanish => true, :cpsweek => true}).url
     end

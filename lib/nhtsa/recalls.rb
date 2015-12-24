@@ -2,12 +2,12 @@
 
 module Nhtsa
   module Recalls
-    require 'json'
-    require 'open-uri'
+
+    END_POINT = "/Recalls/vehicle"
 
     class Years
       def url
-        "http://webapi.nhtsa.gov/api/Recalls/vehicle?format=json"
+        BASE_URI + END_POINT + DEFAULT_PARAMS
       end
 
       def years
@@ -21,7 +21,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/Recalls/vehicle/modelyear/#{@year}?format=json"
+        BASE_URI + END_POINT + "/#{@year}" + DEFAULT_PARAMS
       end
 
       def manufacturers
@@ -32,11 +32,11 @@ module Nhtsa
     class Models
       def initialize(year, manufacturer)
         @year = year
-        @manufacturer = manufacturer
+        @manufacturer = URI::encode(manufacturer)
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/Recalls/vehicle/modelyear/#{@year}/make/#{@manufacturer}?format=json"
+        BASE_URI + END_POINT + "/#{@year}/#{@manufacturer}" + DEFAULT_PARAMS
       end
 
       def models
@@ -47,12 +47,12 @@ module Nhtsa
     class Recalls
       def initialize(year, manufacturer, model)
         @year = year
-        @manufacturer = manufacturer
-        @model = model
+        @manufacturer = URI::encode(manufacturer)
+        @model = URI::encode(model)
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/Recalls/vehicle/modelyear/#{@year}/make/#{@manufacturer}/model/#{@model}?format=json"
+        BASE_URI + END_POINT + "/#{@year}/#{@manufacturer}/#{@model}" + DEFAULT_PARAMS
       end
 
       def recalls
@@ -66,7 +66,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/Recalls/vehicle/CampaignNumber/#{@campaign_number}?format=json"
+        BASE_URI + END_POINT + "/CampaignNumber/#{@campaign_number}" + DEFAULT_PARAMS
       end
 
       def campaign_recalls

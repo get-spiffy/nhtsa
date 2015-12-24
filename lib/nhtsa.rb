@@ -6,4 +6,9 @@ require "nhtsa/civil_penalties"
 require "nhtsa/child_safety_seat_inspection_station_locator"
 
 module Nhtsa
+  require 'json'
+  require 'open-uri'
+
+  BASE_URI = "http://webapi.nhtsa.gov/api"
+  DEFAULT_PARAMS = "?format=json"
 end
