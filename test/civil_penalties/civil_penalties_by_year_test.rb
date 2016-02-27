@@ -1,12 +1,12 @@
 require 'test_helper'
 
 module CivilPenalties
-  class CivilPenaltyByYearTest < Minitest::Test
+  class CivilPenaltiesByYearTest < Minitest::Test
 
     def test_it_builds_url_as_expected
-      expected_url = "http://webapi.nhtsa.gov/api/CivilPenalties/year/2012?format=json"
+      expected_url = "http://webapi.nhtsa.gov/api/CivilPenalties/2012?format=json"
 
-      assert_equal expected_url, Nhtsa::CivilPenalties::CivilPenaltyByYear.new(2012).url
+      assert_equal expected_url, Nhtsa::CivilPenalties::CivilPenaltiesByYear.new(2012).url
     end
 
     def test_years_returns_an_array_of_years
@@ -31,7 +31,7 @@ module CivilPenalties
         }
       ]
 
-      assert_equal years, Nhtsa::CivilPenalties::CivilPenaltyByYear.new(2012).civil_penalties_by_year
+      assert_equal years, Nhtsa::CivilPenalties::CivilPenaltiesByYear.new(2012).civil_penalties_by_year
     end
 
   end
