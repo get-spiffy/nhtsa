@@ -2,6 +2,7 @@
 # http://webapi.nhtsa.gov/Default.aspx?SafetyRatings/API/5
 
 require_relative "safety_ratings/years"
+require_relative "safety_ratings/year"
 require_relative "safety_ratings/manufacturers"
 require_relative "safety_ratings/models"
 require_relative "safety_ratings/trims"
