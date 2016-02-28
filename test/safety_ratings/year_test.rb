@@ -11,9 +11,9 @@ module SafetyRatings
       assert_raises(ArgumentError) { Nhtsa::SafetyRatings::Year.new }
     end
 
-    def test_year_returns_year
-      assert_equal 1991, Nhtsa::SafetyRatings::Year.new(1991).value
-      assert_equal "1991", Nhtsa::SafetyRatings::Year.new("1991").value
+    def test_year_returns_year_as_a_numeric_value
+      assert_equal 1991, Nhtsa::SafetyRatings::Year.new(1991).name
+      assert_equal 1991, Nhtsa::SafetyRatings::Year.new("1991").name
     end
 
     def test_to_s_returns_year_as_a_string

@@ -14,7 +14,7 @@ module Nhtsa
       end
 
       def values
-        @years.map(&:value)
+        @years.map(&:name)
       end
 
       def to_s

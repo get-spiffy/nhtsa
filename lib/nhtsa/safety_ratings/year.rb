@@ -2,10 +2,10 @@ module Nhtsa
   module SafetyRatings
     class Year
       def initialize(year)
-        @year = year
+        @year = year.to_i
       end
 
-      def value
+      def name
         @year
       end
 
