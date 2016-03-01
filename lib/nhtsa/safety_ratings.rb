@@ -6,6 +6,7 @@ require_relative "safety_ratings/year"
 require_relative "safety_ratings/manufacturers"
 require_relative "safety_ratings/manufacturer"
 require_relative "safety_ratings/models"
+require_relative "safety_ratings/model"
 require_relative "safety_ratings/trims"
 require_relative "safety_ratings/ratings"
 
