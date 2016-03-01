@@ -29,7 +29,7 @@ module SafetyRatings
     end
 
     def test_to_s_returns_the_year_and_manufacturer_name_values
-      assert_equal "1991 Mitsubishi", Nhtsa::SafetyRatings::Manufacturer.new(1991, "Mitsubishi").to_s
+      assert_equal "Mitsubishi", Nhtsa::SafetyRatings::Manufacturer.new(1991, "Mitsubishi").to_s
     end
   end
 end
