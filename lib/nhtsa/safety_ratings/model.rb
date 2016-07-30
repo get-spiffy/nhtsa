@@ -15,11 +15,11 @@ module Nhtsa
         @manufacturer
       end
 
-      def model_name
+      def name
         @model_name
       end
 
-      def name
+      def model_name
         @model_name
       end
 

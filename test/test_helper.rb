@@ -22,12 +22,37 @@ class Minitest::Test
     :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/models.json")).read
   )
 
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/2015/Mitsubishi?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/models.json")).read
+  )
+
   FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/1998/Mitsubishi/Galant?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/trims.json")).read
   )
 
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/2015/Mitsubishi/Lancer?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/trims.json")).read
+  )
+
   FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/VehicleId/3832?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/ratings.json")).read
+  )
+
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/VehicleId/3834?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/ratings.json")).read
+  )
+
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/VehicleId/3881?format=json",
+    :content_type => "application/json",
+    :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/ratings.json")).read
+  )
+
+  FakeWeb.register_uri(:get, "http://webapi.nhtsa.gov/api/SafetyRatings/VehicleId/420?format=json",
     :content_type => "application/json",
     :body => File.open(File.expand_path(".", "test/fixtures/safety_ratings/ratings.json")).read
   )
