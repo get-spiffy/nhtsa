@@ -9,30 +9,26 @@ module SafetyRatings
       assert_equal expected_url, Nhtsa::SafetyRatings::Trims.new(2015, "Mitsubishi", "Lancer").url
     end
 
-    def test_trim_descriptions_returns_an_array_of_trim_descriptions
+    def test_trim_descriptions_returns_an_array_of_descriptions
       expected_trim_descriptions = [
         "1998 Mitsubishi Galant 4-DR.",
         "1998 Mitsubishi Galant 4-DR. Station Wagon",
         "1998 Mitsubishi Galant 4-DR. VR-4"
       ]
 
-      assert_equal expected_trim_descriptions, Nhtsa::SafetyRatings::Trims.new(1998, "Mitsubishi", "Galant").trim_descriptions
+      assert_equal expected_trim_descriptions, Nhtsa::SafetyRatings::Trims.new(1998, "Mitsubishi", "Galant").descriptions
     end
 
-    def test_trim_ids_returns_an_array_of_trim_ids
+    def test_trim_ids_returns_an_array_of_ids
       expected_trim_ids = [3832, 3834, 3881]
 
-      assert_equal expected_trim_ids, Nhtsa::SafetyRatings::Trims.new(1998, "Mitsubishi", "Galant").trim_ids
+      assert_equal expected_trim_ids, Nhtsa::SafetyRatings::Trims.new(1998, "Mitsubishi", "Galant").ids
     end
 
-    def test_trims_returns_an_array_of_trim_hashes
-      expected_trims = [
-        {:description => "1998 Mitsubishi Galant 4-DR.", :id => 3832},
-        {:description => "1998 Mitsubishi Galant 4-DR. Station Wagon", :id => 3834},
-        {:description => "1998 Mitsubishi Galant 4-DR. VR-4", :id => 3881}
-      ]
-
-      assert_equal expected_trims, Nhtsa::SafetyRatings::Trims.new(1998, "Mitsubishi", "Galant").trims
+    def test_trims_returns_an_array_of_trims
+      Nhtsa::SafetyRatings::Trims.new(1998, "Mitsubishi", "Galant").trims.each do |trim|
+        assert_instance_of Nhtsa::SafetyRatings::Trim, trim
+      end
     end
 
   end
