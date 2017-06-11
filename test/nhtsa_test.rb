@@ -6,7 +6,7 @@ class NhtsaTest < Minitest::Test
   end
 
   def test_that_it_has_the_correct_base_uri
-    assert_equal "http://webapi.nhtsa.gov/api", Nhtsa::BASE_URI
+    assert_equal "https://webapi.nhtsa.gov/api", Nhtsa::BASE_URI
   end
 
   def test_that_it_has_json_as_the_default_params

@@ -4,7 +4,7 @@ module CivilPenalties
   class CivilPenaltiesByYearTest < Minitest::Test
 
     def test_it_builds_url_as_expected
-      expected_url = "http://webapi.nhtsa.gov/api/CivilPenalties/2012?format=json"
+      expected_url = "https://webapi.nhtsa.gov/api/CivilPenalties/2012?format=json"
 
       assert_equal expected_url, Nhtsa::CivilPenalties::CivilPenaltiesByYear.new(2012).url
     end

@@ -3,7 +3,7 @@ require 'test_helper'
 class CampaignsTest < Minitest::Test
 
   def test_it_builds_url_as_expected
-    expected_url = "http://webapi.nhtsa.gov/api/Recalls/vehicle/CampaignNumber/12V176000?format=json"
+    expected_url = "https://webapi.nhtsa.gov/api/Recalls/vehicle/CampaignNumber/12V176000?format=json"
 
     assert_equal expected_url, Nhtsa::Recalls::CampaignRecalls.new("12V176000").url
   end

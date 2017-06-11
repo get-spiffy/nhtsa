@@ -8,7 +8,7 @@ module Nhtsa
       end
 
       def url
-        "http://webapi.nhtsa.gov/api/CSSIStation?lat=#{@latitude}&long=#{@longitude}&miles=#{@radius}&format=json"
+        "#{BASE_URI}#{END_POINT}?lat=#{@latitude}&long=#{@longitude}&miles=#{@radius}&format=json"
       end
 
       def inspection_stations

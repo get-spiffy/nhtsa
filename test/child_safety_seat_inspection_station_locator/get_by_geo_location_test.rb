@@ -3,7 +3,7 @@ require 'test_helper'
 module ChildSafetySeatInspectionStationLocator
   class GetByGeoLocationTest < Minitest::Test
     def test_it_builds_url_as_expected
-      expected_url = "http://webapi.nhtsa.gov/api/CSSIStation?lat=0.0000&long=0.0000&miles=10&format=json"
+      expected_url = "https://webapi.nhtsa.gov/api/CSSIStation?lat=0.0000&long=0.0000&miles=10&format=json"
 
       assert_equal expected_url, Nhtsa::ChildSafetySeatInspectionStationLocator::GetByGeoLocation.new("0.0000", "0.0000", 10).url
     end

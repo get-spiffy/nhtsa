@@ -4,7 +4,7 @@ module Complaints
   class YearsTest < Minitest::Test
 
     def test_it_builds_url_as_expected
-      expected_url = "http://webapi.nhtsa.gov/api/Complaints/vehicle?format=json"
+      expected_url = "https://webapi.nhtsa.gov/api/Complaints/vehicle?format=json"
 
       assert_equal expected_url, Nhtsa::Complaints::Years.new.url
     end
