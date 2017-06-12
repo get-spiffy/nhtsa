@@ -8,7 +8,7 @@ module Nhtsa
       end
 
       def url(vehicle_id)
-        BASE_URI + END_POINT + "/VehicleId/#{vehicle_id}" + DEFAULT_PARAMS
+        "#{BASE_URI}#{END_POINT}/VehicleId/#{vehicle_id}#{DEFAULT_PARAMS}"
       end
 
       def ratings

@@ -2,7 +2,7 @@ module Nhtsa
   module Complaints
     class Years
       def url
-        BASE_URI + END_POINT + DEFAULT_PARAMS
+        "#{BASE_URI}#{END_POINT}#{DEFAULT_PARAMS}"
       end
 
       def years

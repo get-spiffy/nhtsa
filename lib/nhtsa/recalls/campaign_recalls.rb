@@ -6,7 +6,7 @@ module Nhtsa
       end
 
       def url
-        BASE_URI + END_POINT + "/CampaignNumber/#{@campaign_number}" + DEFAULT_PARAMS
+        "#{BASE_URI}#{END_POINT}/CampaignNumber/#{@campaign_number}#{DEFAULT_PARAMS}"
       end
 
       def campaign_recalls

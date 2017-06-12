@@ -7,7 +7,7 @@ module Nhtsa
       end
 
       def url
-        BASE_URI + END_POINT + "/#{@year}" + DEFAULT_PARAMS
+        "#{BASE_URI}#{END_POINT}/#{@year}#{DEFAULT_PARAMS}"
       end
 
       def manufacturers

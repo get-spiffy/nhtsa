@@ -8,13 +8,13 @@ module Nhtsa
 
       def url
         if @filters[:spanish] && @filters[:cpsweek]
-          BASE_URI + END_POINT + "/zip/#{@zip_code}" + CPS_WEEK + SPANISH + DEFAULT_PARAMS
+          "#{BASE_URI}#{END_POINT}/zip/#{@zip_code}#{CPS_WEEK}#{SPANISH}#{DEFAULT_PARAMS}"
         elsif @filters[:spanish]
-          BASE_URI + END_POINT + "/zip/#{@zip_code}" + SPANISH + DEFAULT_PARAMS
+          "#{BASE_URI}#{END_POINT}/zip/#{@zip_code}#{SPANISH}#{DEFAULT_PARAMS}"
         elsif @filters[:cpsweek]
-          BASE_URI + END_POINT + "/zip/#{@zip_code}" + CPS_WEEK + DEFAULT_PARAMS
+          "#{BASE_URI}#{END_POINT}/zip/#{@zip_code}#{CPS_WEEK}#{DEFAULT_PARAMS}"
         else
-          BASE_URI + END_POINT + "/zip/#{@zip_code}" + DEFAULT_PARAMS
+          "#{BASE_URI}#{END_POINT}/zip/#{@zip_code}#{DEFAULT_PARAMS}"
         end
       end
 

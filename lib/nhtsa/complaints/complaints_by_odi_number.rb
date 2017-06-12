@@ -6,7 +6,7 @@ module Nhtsa
       end
 
       def url
-        BASE_URI + END_POINT + "/odinumber/#{@odi_number}" + DEFAULT_PARAMS
+        "#{BASE_URI}#{END_POINT}/odinumber/#{@odi_number}#{DEFAULT_PARAMS}"
       end
 
       def complaints_by_odi_number

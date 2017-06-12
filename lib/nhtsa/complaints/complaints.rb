@@ -8,7 +8,7 @@ module Nhtsa
       end
 
       def url
-        BASE_URI + END_POINT + "/#{@year}/#{@manufacturer}/#{@model}" + DEFAULT_PARAMS
+        "#{BASE_URI}#{END_POINT}/#{@year}/#{@manufacturer}/#{@model}#{DEFAULT_PARAMS}"
       end
 
       def complaints

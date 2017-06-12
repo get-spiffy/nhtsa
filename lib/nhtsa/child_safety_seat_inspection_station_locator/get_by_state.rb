@@ -8,13 +8,13 @@ module Nhtsa
 
       def url
         if @filters[:spanish] && @filters[:cpsweek]
-          BASE_URI + END_POINT + "/state/#{@state_abbreviation}" + CPS_WEEK + SPANISH + DEFAULT_PARAMS
+          "#{BASE_URI}#{END_POINT}/state/#{@state_abbreviation}#{CPS_WEEK}#{SPANISH}#{DEFAULT_PARAMS}"
         elsif @filters[:spanish]
-          BASE_URI + END_POINT + "/state/#{@state_abbreviation}" + SPANISH + DEFAULT_PARAMS
+          "#{BASE_URI}#{END_POINT}/state/#{@state_abbreviation}#{SPANISH}#{DEFAULT_PARAMS}"
         elsif @filters[:cpsweek]
-          BASE_URI + END_POINT + "/state/#{@state_abbreviation}" + CPS_WEEK + DEFAULT_PARAMS
+          "#{BASE_URI}#{END_POINT}/state/#{@state_abbreviation}#{CPS_WEEK}#{DEFAULT_PARAMS}"
         else
-          BASE_URI + END_POINT + "/state/#{@state_abbreviation}" + DEFAULT_PARAMS
+          "#{BASE_URI}#{END_POINT}/state/#{@state_abbreviation}#{DEFAULT_PARAMS}"
         end
       end
 
