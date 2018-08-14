@@ -1,5 +1,12 @@
 # Changelog #
 
+## v0.3.0 August 14 2018 ##
+
+### Features ###
+
+* Added Vehicles endpoint with VIN decoding
+
+
 ## v0.2.1 June 11 2017 ##
 
 ### Features ###

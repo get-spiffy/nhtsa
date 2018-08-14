@@ -6,12 +6,12 @@ require 'nhtsa/version'
 Gem::Specification.new do |spec|
   spec.name          = "nhtsa"
   spec.version       = Nhtsa::VERSION
-  spec.authors       = ["Mwaki Harri Magotswi"]
-  spec.email         = ["magotswi@gmail.com"]
+  spec.authors       = ["Mwaki Harri Magotswi","Ryan Eade"]
+  spec.email         = ["magotswi@gmail.com","ryan@getspiffy.com"]
 
   spec.summary       = %q{A simple ruby gem to access NHTSA data.}
   spec.description   = %q{NHTSA offers data on safety ratings, recalls, complaints, civil penalty payments, and child safety seat inspection station locations through their various web APIs. The main motivation for this gem is to access the NHTSA WebAPIs and make the data available to use for any ruby application.}
-  spec.homepage      = "https://github.com/omundu/nhtsa"
+  spec.homepage      = "https://github.com/get-spiffy/nhtsa"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
