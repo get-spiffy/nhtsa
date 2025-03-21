@@ -8,7 +8,7 @@ module Nhtsa
       end
 
       def url
-        "#{BASE_URI}#{END_POINT}/recallsByVehicle#{DEFAULT_PARAMS}make=#{@make}&model=#{@model}&modelYear=#{@year}"
+        "#{BASE_URI}#{END_POINT}/recallsByVehicle#{DEFAULT_PARAMS}&make=#{@manufacturer}&model=#{@model}&modelYear=#{@year}"
       end
 
       def recalls
