@@ -8,6 +8,6 @@ require_relative "recalls/campaign_recalls"
 
 module Nhtsa
   module Recalls
-    END_POINT = "/Recalls/vehicle"
+    END_POINT = "/recalls"
   end
 end
