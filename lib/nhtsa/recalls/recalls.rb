@@ -12,7 +12,7 @@ module Nhtsa
       end
 
       def recalls
-        JSON.parse(open(url).read)["Results"]
+        JSON.parse(open(url).read)["results"]
       end
     end
   end
