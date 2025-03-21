@@ -10,6 +10,6 @@ module Nhtsa
   require 'json'
   require 'open-uri'
 
-  BASE_URI = "https://webapi.nhtsa.gov/api"
-  DEFAULT_PARAMS = "?format=json"
+  BASE_URI = "https://api.nhtsa.gov/"
+  DEFAULT_PARAMS = "?"
 end

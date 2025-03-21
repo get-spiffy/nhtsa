@@ -20,22 +20,13 @@
 ## Recalls ##
 
 ### End Point ###
-    /Recalls
+    /recalls
 
-### Recalls by Brand ###
-    /Recalls/{PRODUCT_TYPE}/brand/{MAKE}
-    /Recalls/{PRODUCT_TYPE}/brand/{MAKE}/model/{MODEL}
+### Recalls by Vehicle ###
+    /recalls/recallsByVehicle?make={MAKE}&model={MODEL}&modelYear={YEAR}
 
-### Verbose Methods ###
-    /Recalls/{PRODUCT_TYPE}/modelyear/{MODEL_YR}
-    /Recalls/{PRODUCT_TYPE}/modelyear/{MODEL_YR}/make/{MAKE}
-    /Recalls/{PRODUCT_TYPE}/modelyear/{MODEL_YR}/make/{MAKE}/model/{MODEL}
-
-### Concise Methods ###
-    /Recalls/{PRODUCT_TYPE}
-    /Recalls/{PRODUCT_TYPE}/{MODEL_YR}
-    /Recalls/{PRODUCT_TYPE}/{MODEL_YR}/{MAKE}
-    /Recalls/{PRODUCT_TYPE}/{MODEL_YR}/{MAKE}/{MODEL}
+### Recalls by Campaign ###
+    /recalls/campaignNumber?campaignNumber={CAMPAIGN}
 
 
 ## Complaints ##
